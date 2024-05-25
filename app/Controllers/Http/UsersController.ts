@@ -7,7 +7,7 @@ export default class UsersController {
   public async firstUser({ request, response }: HttpContextContract) {
     const users = await User.all();
 
-    if (users.length !== 0) {
+    if (users) {
       throw new Error("Já existe usuário criado")
     }
 
